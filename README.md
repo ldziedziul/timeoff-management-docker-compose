@@ -28,6 +28,17 @@ You can set the following variables to configure the `timeoff` application:
 `PROMOTION_URL` | Set url in footer mails | `http://timeoff.management` | URL | You can change this if you want footer mail link to redirect to your hosted application
 `ALLOW_ACCOUNTS_CREATION` | Enable/Disable public companies account creation | `true` | `true` , `false` | You need to enable account creation at least on first run to create your company. You can disable it afterwards and restart the container
 
+## Upgrade
+- stop application first:
+```bash
+docker-compose stop
+```
+- rebuild image and recreate containers:
+```bash
+docker-compose build --no-cache
+docker-compose up -d
+```
+
 ## More info:
 - https://timeoff.management
 - https://github.com/timeoff-management/application
